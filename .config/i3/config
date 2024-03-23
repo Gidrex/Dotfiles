@@ -4,29 +4,29 @@
 set $super Mod4
 set $alt Mod1
 
-### Applications: ###
+#########################################
+#		Applications / Variables:		#
+#########################################
 
-set $preferredTerminalEmulator /usr/bin/xfce4-terminal
-#											was kitty
-set $preferredBrowser /usr/bin/mercury-browser
-set $preferredFileManager /usr/bin/thunar
-set $preferredMailClient /usr/bin/geary
-set $preferredTextEditor /usr/bin/geany
+set $preferredTerminalEmulator xfce4-terminal
+set $preferredBrowser mercury-browser
+set $preferredFileManager thunar
 set $preferredScreenCaptureTool /usr/bin/flameshot gui
+set $VPNprofile Lon
 
-###########################################
-### Commonly Used Application Keybinds: ###
-###########################################
+#################################################
+#		Commonly Used Application Keybinds:		#
+#################################################
 
 bindsym $super+F1 					exec $preferredBrowser;focus
-bindsym $super+F2 					exec --no-startup-id kitty -e ranger
+bindsym $super+F2 					exec --no-startup-id xfce4-terminal -e ranger
 bindsym $super+F3 					exec $preferredFileManager;focus
 bindsym $super+F4 					exec Applications/iMe;focus
 bindsym $super+F5 					exec /usr/bin/code-oss;focus
 bindsym $super+F6 					exec /usr/bin/onlyoffice-desktopeditors;focus
 
-bindsym Control+Shift+KP_Add 		exec kitty sudo wg-quick up Hel
-bindsym Control+Shift+KP_Subtract 	exec kitty sudo wg-quick down Hel
+bindsym Control+Shift+KP_Add 		exec kitty sudo wg-quick up $VPNprofile
+bindsym Control+Shift+KP_Subtract 	exec kitty sudo wg-quick down $VPNprofile
 bindsym Control+Shift+P 			exec xfce4-terminal -e nmtui
 
 bindsym Print exec --no-startup-id $preferredScreenCaptureTool
